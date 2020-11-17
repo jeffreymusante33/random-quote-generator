@@ -55,12 +55,13 @@ console.log(randomNumber);
 
 function getRandomQuote(obj) {
     for (key in obj) {
-        let randomQuote = randomNumber;
-        return obj[randomQuote][key];
+        let randomQuote = obj[randomQuote][key];
+        console.log(randomQuote);
+        return randomQuote;
     }
 }
 
-console.log(getRandomQuote(quotes));
+
 
 /***
  * `printQuote` function
