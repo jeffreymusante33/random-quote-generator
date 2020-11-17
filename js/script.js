@@ -46,16 +46,21 @@ function getRandomInt(max) {
     return randomNum;
 }
 
-console.log(getRandomInt(quotes.length));
+const randomNumber = getRandomInt(quotes.length)
+
+console.log(randomNumber);
 /***
  * `getRandomQuote` function
 ***/
 
 function getRandomQuote(obj) {
     for (key in obj) {
-        return obj[key];
+        let randomQuote = randomNumber;
+        return obj[randomQuote][key];
     }
 }
+
+console.log(getRandomQuote(quotes));
 
 /***
  * `printQuote` function
