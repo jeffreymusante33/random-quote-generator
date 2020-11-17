@@ -3,13 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
-
-/*** 
- * `quotes` array 
-***/
+//Array of quotes to be randomly chosen
 
 const quotes = [
     {
@@ -38,7 +32,6 @@ const quotes = [
     },
 ]
 
-// console.log(quotes);
 
 // Code tweaked from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(max) {
@@ -46,28 +39,28 @@ function getRandomInt(max) {
     return randomNum;
 }
 
-const randomQuoteIndex = getRandomInt(quotes.length)
-
-/***
- * `getRandomQuote` function
-***/
-
+// Randomly choose the quote using the index number in the array, and return the chosen quote object
 function getRandomQuote(obj) {
+    const randomQuoteIndex = getRandomInt(quotes.length)
     for (key in obj) {
         let randomQuote = obj[randomQuoteIndex];
         return randomQuote;
     }
 }
 
-console.log(getRandomQuote(quotes));
-
-
-/***
- * `printQuote` function
-***/
-
+// Print the quote to the webpage
 function printQuote() {
-  document.querySelector(".quote").innerHTML = getRandomQuote(quotes);
+  const quote = getRandomQuote(quotes);
+  let html = `<p class="quote">${quote["quote"]}</p><p class="source">${quote["source"]}`;
+  if (quote["citation"] && quote["year"]) {
+      html += `<span class="citation">${quote["citation"]}</span><span class="year">${quote["year"]}</span>`;
+  } else if (quote["citation"]) {
+      html += `<span class="citation">${quote["citation"]}</span>`
+  } else if (quote["year"]) {
+      html += `<span class="year">${quote["year"]}</span>`;
+  }
+  html += "</p>";
+  document.getElementById('quote-box').innerHTML = html;
 }
 
 /***
@@ -75,4 +68,4 @@ function printQuote() {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-// document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
