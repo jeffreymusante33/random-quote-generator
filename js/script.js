@@ -25,7 +25,7 @@ const quoteCollection = [
 ]
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function testing changes
 ***/
 
 function randomQuote(obj) {
