@@ -11,10 +11,11 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
-const quoteCollection = [
+const quotes = [
     {
         quote: "To be or not to be",
         source: "William Shakespeare",
+        citation: "Place to be cited"
         year: 1892,
     },
     {
@@ -25,10 +26,10 @@ const quoteCollection = [
 ]
 
 /***
- * `getRandomQuote` function testing changes
+ * `getRandomQuote` function
 ***/
 
-function randomQuote(obj) {
+function getRandomQuote(obj) {
     for (key in obj) {
         return obj[key];
     }
@@ -38,9 +39,9 @@ function randomQuote(obj) {
  * `printQuote` function
 ***/
 
-console.log(randomQuote(quoteCollection));
+function printQuote() {
 
-document.querySelector("#quote-box").innerHTML = "testing";
+}
 
 /***
  * click event listener for the print quote button
