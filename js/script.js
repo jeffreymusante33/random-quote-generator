@@ -13,18 +13,40 @@ project 1 - A Random Quote Generator
 
 const quotes = [
     {
-        quote: "To be or not to be",
-        source: "William Shakespeare",
-        citation: "Place to be cited"
-        year: 1892,
+        quote: "The purpose of our lives is to be happy.",
+        source: "Dalai Lama",
     },
     {
-        quote: "He who whatever whatever",
-        source: "Whoever Whoeverenstein",
-        year: "1993",
+        quote: "Life is what happens when you’re busy making other plans.",
+        source: "John Lennon",
+    },
+    {
+        quote: "Many of life’s failures are people who did not realize how close they were to success when they gave up.",
+        source: "Thomas A. Edison",
+    },
+    {
+        quote: "It’s Only After We’ve Lost Everything That We’re Free To Do Anything.",
+        source: "Tyler Durden",
+        citation: "Fight Club",
+        year: 1999,
+    },
+    {
+        quote: "Denial is the most predictable of all human responses",
+        source: "The Architect",
+        citation: "The Matrix Reloaded",
+        year: 2003,
     },
 ]
 
+console.log(quotes);
+
+// Code tweaked from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(max) {
+    let randomNum = Math.floor(Math.random() * max);
+    return randomNum;
+}
+
+console.log(getRandomInt(quotes.length));
 /***
  * `getRandomQuote` function
 ***/
@@ -40,14 +62,12 @@ function getRandomQuote(obj) {
 ***/
 
 function printQuote() {
-
+  document.querySelector(".quote").innerHTML = getRandomQuote(quotes);
 }
-
-// testing file changes for github
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// document.getElementById('load-quote').addEventListener("click", printQuote, false);
