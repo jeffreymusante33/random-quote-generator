@@ -38,7 +38,7 @@ const quotes = [
     },
 ]
 
-console.log(quotes);
+// console.log(quotes);
 
 // Code tweaked from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(max) {
@@ -46,21 +46,20 @@ function getRandomInt(max) {
     return randomNum;
 }
 
-const randomNumber = getRandomInt(quotes.length)
+const randomQuoteIndex = getRandomInt(quotes.length)
 
-console.log(randomNumber);
 /***
  * `getRandomQuote` function
 ***/
 
 function getRandomQuote(obj) {
     for (key in obj) {
-        let randomQuote = obj[randomQuote][key];
-        console.log(randomQuote);
+        let randomQuote = obj[randomQuoteIndex];
         return randomQuote;
     }
 }
 
+console.log(getRandomQuote(quotes));
 
 
 /***
