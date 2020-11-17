@@ -1,8 +1,3 @@
-/******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
-******************************************/
-
 //Array of quotes to be randomly chosen
 
 const quotes = [
@@ -71,10 +66,5 @@ function printQuote() {
 
 // Set printQuote() to run every 10 seconds automatically
 setInterval(printQuote, 10000);
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
