@@ -23,17 +23,19 @@ const quotes = [
         source: "Tyler Durden",
         citation: "Fight Club",
         year: 1999,
+        tag: "movie",
     },
     {
         quote: "Denial is the most predictable of all human responses",
         source: "The Architect",
         citation: "The Matrix Reloaded",
         year: 2003,
+        tag: "movie",
     },
 ]
 
 
-// Code tweaked from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// Code from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomInt(max) {
     let randomNum = Math.floor(Math.random() * max);
     return randomNum;
@@ -59,11 +61,16 @@ function printQuote() {
   } else if (quote["year"]) {
       html += `<span class="year">${quote["year"]}</span>`;
   }
+  if (quote["tag"]) {
+      html += `<br><small>*${quote["tag"]}</small>`;
+  }
   html += "</p>";
   document.getElementById('quote-box').innerHTML = html;
-  let bgstyle = `background-color: rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`;
-  console.log(bgstyle);
+  document.body.style.backgroundColor = `rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`; // generates 3 random rgb values
 }
+
+// Set printQuote() to run every 10 seconds automatically
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
