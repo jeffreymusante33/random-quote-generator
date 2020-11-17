@@ -61,6 +61,8 @@ function printQuote() {
   }
   html += "</p>";
   document.getElementById('quote-box').innerHTML = html;
+  let bgstyle = `background-color: rgb(${getRandomInt(255)}, ${getRandomInt(255)}, ${getRandomInt(255)})`;
+  console.log(bgstyle);
 }
 
 /***
